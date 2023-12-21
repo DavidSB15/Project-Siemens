@@ -1,0 +1,56 @@
+body
+{
+    font-family: 'Tahoma', sans-serif;
+}
+
+#quiz
+{
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#options
+{
+    margin-top: 20px;
+}
+
+#score
+{
+    margin-top: 20px;
+}
+
+button
+{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid #56eb56;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: #00641e;
+    background-color: rgb(153, 219, 250);
+}
+
+.button:hover 
+{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+  
+.button[disabled]:hover 
+{
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.selected 
+{
+    background-color: rgba(87, 32, 240, 0.5);
+}

@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "text": "What is the capital of France?",
+        "choices": ["Berlin", "London", "Paris", "Madrid"],
+        "correctAnswer": 2,
+        "category": "History"
+    },
+    {
+        "id": 2,
+        "text": "Which planet is known as the Red Planet?",
+        "choices": ["Earth", "Mars", "Venus", "Jupiter"],
+        "correctAnswer": 1,
+        "category": "Science"
+    },
+    
+    {
+        "id": 50,
+        "text": "What is the square root of 144?",
+        "choices": ["10", "12", "14", "16"],
+        "correctAnswer": 1,
+        "category": "Math"
+    }
+]

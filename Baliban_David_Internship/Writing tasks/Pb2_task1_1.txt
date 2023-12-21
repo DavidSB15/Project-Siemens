@@ -1,0 +1,77 @@
+Questions organization and structure:
+
+-- array of objects (one obj = one question), each containing:
+ - question ID
+ - the question 
+ - possible answers (4)
+ - the correct answer (the index of the correct answer)
+-- for random questions, use a function (js) that generates a random question ID that is in 
+the range
+-- verify for repetition: if the selected ID has been already used, reapply the function until 
+a new ID is found
+-- when the user selects  an answer, verify if it is the correct one. If ok, increment the variable 
+that contains the user's scpre and mark the answered question as used
+-- proceed to next question
+
+User progress:
+
+-- use a variable that counts the user's actual question number
+-- use a variable that contains the user's score 
+
+
+
+		Logical outline - pseudocode
+
+
+1. Initialize variables:
+   - questionNr = 0
+   - score = 0
+   - selectedAnswerIndex = null
+
+2. Define the questions array containing question objects with IDs, texts, choices, and correct answers.
+
+3. Define a function to randomize the order of questions:
+   function randomize(array):
+       for i from array.length - 1 to 1:
+           j = random integer between 0 and i
+           swap array[i] with array[j]
+       return array
+
+4. Define a function to start the quiz:
+   function startQuiz():
+       Call randomize(questions) to shuffle the questions array
+       Call displayQuestion()
+
+5. Define a function to display a question:
+   function displayQuestion():
+       Get the current question using questionNr from the shuffled questions array
+       Display the question text on the webpage
+
+       Create a container for options:
+       for each choice in current question:
+           Create a button for the choice
+           Add an onclick event to the button:
+               - Remove 'selected' class from all buttons
+               - Add 'selected' class to the clicked button
+               - Set selectedAnswerIndex to the index of the clicked button
+
+       Create a submit button with an onclick event:
+           If selectedAnswerIndex is not null:
+               Call submitAnswer(selectedAnswerIndex)
+               Reset selectedAnswerIndex and remove 'selected' class from all buttons
+
+6. Define a function to submit an answer:
+   function submitAnswer(selectedIndex):
+       Get the current question using questionNr from the shuffled questions array
+       If selectedIndex matches the correctAnswer of the current question:
+           Increment score by 1
+
+       Increment questionNr by 1
+
+       If questionNr is less than the total number of questions:
+           Call displayQuestion() to display the next question
+       Else:
+           Display "Congrats! You finished the quiz!" on the webpage
+           Display the user's score as "Your score: [score]/[total number of questions]"
+
+7. Call startQuiz() to initiate the quiz when the page loads or when required.
